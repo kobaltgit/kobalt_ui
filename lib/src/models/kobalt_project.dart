@@ -12,6 +12,7 @@ enum KobaltProjectId {
 class KobaltProjectMeta {
   final KobaltProjectId id;
   final String name;
+  final String? defaultVersion;
   final String iconEmoji;
   final IconData fallbackIcon;
   final String taglineRu;
@@ -28,6 +29,7 @@ class KobaltProjectMeta {
   const KobaltProjectMeta({
     required this.id,
     required this.name,
+    this.defaultVersion,
     required this.iconEmoji,
     required this.fallbackIcon,
     required this.taglineRu,
@@ -42,6 +44,7 @@ class KobaltProjectMeta {
     required this.gradientColors,
   });
 
+  String get latestReleaseUrl => '$repoUrl/releases/latest';
   String getTagline(bool isRu) => isRu ? taglineRu : taglineEn;
   String getBio(bool isRu) => isRu ? shortBioRu : shortBioEn;
 }
@@ -51,6 +54,7 @@ class KobaltRegistry {
     KobaltProjectMeta(
       id: KobaltProjectId.stashIt,
       name: 'StashIt',
+      defaultVersion: 'v1.0.1',
       iconEmoji: '📥',
       fallbackIcon: Icons.move_to_inbox_rounded,
       taglineRu: 'Плавающий карман Drag-and-Drop',
@@ -67,6 +71,7 @@ class KobaltRegistry {
     KobaltProjectMeta(
       id: KobaltProjectId.miniBin,
       name: 'MiniBin',
+      defaultVersion: 'v2.0.1',
       iconEmoji: '🗑',
       fallbackIcon: Icons.delete_outline_rounded,
       taglineRu: 'Умная корзина в системном трее',
@@ -83,6 +88,7 @@ class KobaltRegistry {
     KobaltProjectMeta(
       id: KobaltProjectId.undoit,
       name: 'Undoit',
+      defaultVersion: 'v2.1.1',
       iconEmoji: '⏱',
       fallbackIcon: Icons.history_rounded,
       taglineRu: 'Машина времени для локальных файлов',
@@ -99,6 +105,7 @@ class KobaltRegistry {
     KobaltProjectMeta(
       id: KobaltProjectId.polyShift,
       name: 'PolyShift',
+      defaultVersion: 'v1.0.0',
       iconEmoji: '🌐',
       fallbackIcon: Icons.auto_awesome,
       taglineRu: 'HUD-помощник и AI-перевод у курсора',
@@ -115,6 +122,7 @@ class KobaltRegistry {
     KobaltProjectMeta(
       id: KobaltProjectId.peekIt,
       name: 'PeekIt',
+      defaultVersion: 'v1.0.0',
       iconEmoji: '👁',
       fallbackIcon: Icons.visibility_rounded,
       taglineRu: 'Мгновенный просмотр файлов по Space',
@@ -131,6 +139,7 @@ class KobaltRegistry {
     KobaltProjectMeta(
       id: KobaltProjectId.peekItPlugins,
       name: 'PeekIt Plugins',
+      defaultVersion: 'v1.0.0',
       iconEmoji: '🧩',
       fallbackIcon: Icons.extension_rounded,
       taglineRu: 'Официальный каталог расширений PeekIt',
