@@ -4,8 +4,8 @@ import 'package:kobalt_ui/kobalt_ui.dart';
 
 void main() {
   group('KobaltRegistry', () {
-    test('contains all 6 ecosystem projects', () {
-      expect(KobaltRegistry.allProjects.length, equals(6));
+    test('contains all 7 ecosystem projects', () {
+      expect(KobaltRegistry.allProjects.length, equals(7));
     });
 
     test('all projects have valid latestReleaseUrl and defaultVersion', () {

@@ -12,6 +12,7 @@ class KobaltFooterLink {
 
 class KobaltFooter extends StatelessWidget {
   final KobaltProjectId project;
+  final KobaltProjectMeta? customProject;
   final String? version;
   final bool isRussian;
   final Color? accentColor;
@@ -24,6 +25,7 @@ class KobaltFooter extends StatelessWidget {
   const KobaltFooter({
     super.key,
     required this.project,
+    this.customProject,
     this.version,
     this.isRussian = true,
     this.accentColor,
@@ -55,7 +57,7 @@ class KobaltFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final currentMeta = KobaltRegistry.getById(project);
+    final currentMeta = customProject ?? KobaltRegistry.getById(project);
     final sisterProjects = KobaltRegistry.getSisterProjects(project);
     final effectiveAccent = accentColor ?? currentMeta.gradientColors.first;
     final effectiveGradient = accentGradient ??

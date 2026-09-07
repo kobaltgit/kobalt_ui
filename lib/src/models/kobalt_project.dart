@@ -7,6 +7,8 @@ enum KobaltProjectId {
   polyShift,
   peekIt,
   peekItPlugins,
+  tuckIt,
+  custom,
 }
 
 class KobaltProjectMeta {
@@ -105,7 +107,7 @@ class KobaltRegistry {
     KobaltProjectMeta(
       id: KobaltProjectId.polyShift,
       name: 'PolyShift',
-      defaultVersion: 'v1.0.0',
+      defaultVersion: 'v2.0.0',
       iconEmoji: '🌐',
       fallbackIcon: Icons.auto_awesome,
       taglineRu: 'HUD-помощник и AI-перевод у курсора',
@@ -122,7 +124,7 @@ class KobaltRegistry {
     KobaltProjectMeta(
       id: KobaltProjectId.peekIt,
       name: 'PeekIt',
-      defaultVersion: 'v1.0.0',
+      defaultVersion: 'v1.3.2',
       iconEmoji: '👁',
       fallbackIcon: Icons.visibility_rounded,
       taglineRu: 'Мгновенный просмотр файлов по Space',
@@ -139,7 +141,7 @@ class KobaltRegistry {
     KobaltProjectMeta(
       id: KobaltProjectId.peekItPlugins,
       name: 'PeekIt Plugins',
-      defaultVersion: 'v1.0.0',
+      defaultVersion: 'v0.1.0',
       iconEmoji: '🧩',
       fallbackIcon: Icons.extension_rounded,
       taglineRu: 'Официальный каталог расширений PeekIt',
@@ -153,10 +155,30 @@ class KobaltRegistry {
       licenseUrl: 'https://github.com/kobaltgit/peekit-plugins/blob/main/LICENSE',
       gradientColors: [Color(0xFF6366F1), Color(0xFFA855F7)],
     ),
+    KobaltProjectMeta(
+      id: KobaltProjectId.tuckIt,
+      name: 'TuckIt',
+      defaultVersion: 'v1.0.0',
+      iconEmoji: '🏷️',
+      fallbackIcon: Icons.bookmarks_rounded,
+      taglineRu: 'ИИ-хаб закладок, клинер и быстрый лаунчер',
+      taglineEn: 'AI Bookmark Hub, Smart Cleaner & Fast Launcher',
+      shortBioRu: 'Мгновенный перехват Ctrl+D, ИИ-систематизация закладок Gemini и автономный десктоп-каталог сайтов для Windows.',
+      shortBioEn: 'Instant Ctrl+D capture, Gemini AI bookmark organization, and a standalone desktop site catalog for Windows.',
+      siteUrl: 'https://kobaltgit.github.io/tuckit/',
+      repoUrl: 'https://github.com/kobaltgit/tuckit',
+      releasesUrl: 'https://github.com/kobaltgit/tuckit/releases',
+      issuesUrl: 'https://github.com/kobaltgit/tuckit/issues',
+      licenseUrl: 'https://github.com/kobaltgit/tuckit/blob/main/LICENSE',
+      gradientColors: [Color(0xFF06B6D4), Color(0xFF3B82F6)],
+    ),
   ];
 
   static KobaltProjectMeta getById(KobaltProjectId id) {
-    return allProjects.firstWhere((p) => p.id == id);
+    return allProjects.firstWhere(
+      (p) => p.id == id,
+      orElse: () => allProjects.first,
+    );
   }
 
   static List<KobaltProjectMeta> getSisterProjects(KobaltProjectId currentId) {

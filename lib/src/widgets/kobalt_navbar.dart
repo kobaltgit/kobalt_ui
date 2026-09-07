@@ -13,6 +13,7 @@ class KobaltNavLink {
 
 class KobaltNavBar extends StatefulWidget {
   final KobaltProjectId project;
+  final KobaltProjectMeta? customProject;
   final String? version;
   final bool isRussian;
   final VoidCallback onLanguageToggle;
@@ -30,6 +31,7 @@ class KobaltNavBar extends StatefulWidget {
   const KobaltNavBar({
     super.key,
     required this.project,
+    this.customProject,
     this.version,
     this.isRussian = true,
     required this.onLanguageToggle,
@@ -80,7 +82,7 @@ class _KobaltNavBarState extends State<KobaltNavBar> {
 
   @override
   Widget build(BuildContext context) {
-    final currentMeta = KobaltRegistry.getById(widget.project);
+    final currentMeta = widget.customProject ?? KobaltRegistry.getById(widget.project);
     final effectiveAccent = widget.accentColor ?? currentMeta.gradientColors.first;
     final effectiveGradient = widget.accentGradient ??
         LinearGradient(
