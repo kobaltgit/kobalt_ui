@@ -1,4 +1,4 @@
-﻿library kobalt_ui;
+library kobalt_ui;
 
 export 'src/models/kobalt_project.dart';
 export 'src/theme/kobalt_tokens.dart';

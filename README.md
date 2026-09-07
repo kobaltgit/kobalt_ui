@@ -1,4 +1,4 @@
-﻿# Kobalt UI (`kobalt_ui`)
+# Kobalt UI (`kobalt_ui`)
 
 Официальная библиотека общих UI-компонентов и единый реестр проектов для промо-лендингов экосистемы **Kobalt Tools** (`MiniBin`, `Undoit`, `PolyShift`, `PeekIt`, `StashIt`, `PeekIt Plugins`).
 

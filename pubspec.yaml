@@ -1,4 +1,4 @@
-﻿name: kobalt_ui
+name: kobalt_ui
 description: "Shared UI component library for Kobalt Tools ecosystem websites (unified navbar, 3-column footer, and project directory)."
 version: 0.1.0
 publish_to: 'none'
