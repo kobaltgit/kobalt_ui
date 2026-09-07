@@ -1,0 +1,19 @@
+﻿name: kobalt_ui
+description: "Shared UI component library for Kobalt Tools ecosystem websites (unified navbar, 3-column footer, and project directory)."
+version: 0.1.0
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  url_launcher: ^6.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
